@@ -19,9 +19,9 @@ import { useEffect, useRef } from "react";
       <section
         className="page-section golden-rule"
         id="intro"
-        style={{ background: "#0a0a0a" }}
+        style={{ background: "#000" }}
       >
-        {/* Video background — plays once, no loop */}
+        {/* Video — sits above the section background, behind overlay and text */}
         <video
           autoPlay
           muted
@@ -32,19 +32,19 @@ import { useEffect, useRef } from "react";
             width: "100%",
             height: "100%",
             objectFit: "cover",
-            zIndex: -1,
+            zIndex: 1,
           }}
         >
           <source src={`${import.meta.env.BASE_URL}logo-reel.mp4`} type="video/mp4" />
         </video>
 
-        {/* Overlay gradient — bottom 40% darkens so text sits clean */}
+        {/* Overlay gradient — sits above video, darkens edges so text reads clean */}
         <div
           style={{
             position: "absolute",
             inset: 0,
-            background: "linear-gradient(to bottom, rgba(10,10,10,0.3) 0%, rgba(10,10,10,0) 30%, rgba(10,10,10,0.7) 70%, rgba(10,10,10,0.95) 100%)",
-            zIndex: 3,
+            background: "linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0) 30%, rgba(0,0,0,0.65) 70%, rgba(0,0,0,0.92) 100%)",
+            zIndex: 2,
           }}
         />
 
@@ -91,7 +91,6 @@ import { useEffect, useRef } from "react";
             gap: "20px",
           }}
         >
-          {/* Hairline above headline */}
           <div style={{ width: "1px", height: "60px", background: "rgba(250,250,248,0.3)" }} />
 
           <h1
@@ -109,10 +108,8 @@ import { useEffect, useRef } from "react";
             </span>
           </h1>
 
-          {/* Horizontal rule — Logo 3 language */}
           <div style={{ width: "100%", maxWidth: "900px", height: "1px", background: "rgba(250,250,248,0.2)", margin: "8px 0" }} />
 
-          {/* Sub-caption */}
           <p className="text-caption" style={{ textAlign: "center", letterSpacing: "0.12em" }}>
             Writer · Director · Character Designer
             &nbsp;&nbsp;—&nbsp;&nbsp;
@@ -120,7 +117,7 @@ import { useEffect, useRef } from "react";
           </p>
         </div>
 
-        {/* Scroll indicator */}
+        {/* Enter / scroll indicator */}
         <div
           style={{
             position: "absolute",
