@@ -1,10 +1,10 @@
 import { useEffect, useRef } from "react";
 
-  interface WeChatModalProps {
+  interface RedNoteModalProps {
     onClose: () => void;
   }
 
-  export default function WeChatModal({ onClose }: WeChatModalProps) {
+  export default function RedNoteModal({ onClose }: RedNoteModalProps) {
     const backdropRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -26,7 +26,7 @@ import { useEffect, useRef } from "react";
         onClick={(e) => { if (e.target === backdropRef.current) onClose(); }}
         role="dialog"
         aria-modal="true"
-        aria-label="WeChat QR Code"
+        aria-label="RedNote QR Code"
       >
         <div
           style={{
@@ -64,22 +64,30 @@ import { useEffect, useRef } from "react";
           </button>
 
           <div style={{ textAlign: "center" }}>
-            <p className="text-h3" style={{ marginBottom: "4px" }}>WeChat</p>
+            <p className="text-h3" style={{ marginBottom: "4px" }}>小红书 RedNote</p>
             <p className="text-caption" style={{ color: "rgba(250,250,248,0.4)" }}>
-              Dalton Grant Jr. · Jinan, Shandong
+              叼哥画画 · ID: 6147347010
             </p>
           </div>
 
           <img
-            src={`${import.meta.env.BASE_URL}wechat-qr.jpg`}
-            alt="WeChat QR Code — Dalton Grant Jr."
-            style={{ width: "260px", borderRadius: "4px" }}
+            src={`${import.meta.env.BASE_URL}rednote-qr.png`}
+            alt="RedNote QR Code — 叼哥画画"
+            style={{ width: "260px", borderRadius: "8px" }}
           />
 
-          <p className="text-caption" style={{ textAlign: "center", lineHeight: "1.8" }}>
-            Dalton Grant Jr.
-            <br />
-            <span style={{ color: "rgba(250,250,248,0.3)" }}>Scan to add on WeChat</span>
+          <a
+            href="https://www.xiaohongshu.com/user/profile/6147347010"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="connect-btn"
+            style={{ width: "100%", justifyContent: "center", textDecoration: "none" }}
+          >
+            Open Profile on RedNote →
+          </a>
+
+          <p className="text-caption" style={{ color: "rgba(250,250,248,0.3)", textAlign: "center" }}>
+            Scan QR · Find me on RedNote
           </p>
         </div>
       </div>
