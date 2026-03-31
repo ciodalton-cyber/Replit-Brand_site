@@ -33,7 +33,7 @@ export default function Intro() {
           width: "100%",
           height: "100%",
           objectFit: "cover",
-          zIndex: 1,
+          zIndex: -1,
         }}
       >
         <source src={`${import.meta.env.BASE_URL}intro-reel.mp4`} type="video/mp4" />
