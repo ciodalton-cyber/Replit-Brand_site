@@ -21,30 +21,23 @@ export default function Intro() {
       id="intro"
       style={{ background: "#0a0a0a" }}
     >
-      {/* Video background placeholder */}
-      <div className="video-bg">
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            background: "repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(255,255,255,0.02) 39px, rgba(255,255,255,0.02) 40px), repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(255,255,255,0.02) 39px, rgba(255,255,255,0.02) 40px)",
-          }}
-        />
-        <div
-          style={{
-            position: "relative",
-            zIndex: 2,
-            textAlign: "center",
-          }}
-        >
-          <p className="video-placeholder-label">
-            ↳ Insert TapNow video clip here
-          </p>
-          <p className="text-caption" style={{ marginTop: "8px", color: "rgba(255,255,255,0.1)" }}>
-            Replace video-bg div with &lt;video autoPlay muted loop playsInline&gt;
-          </p>
-        </div>
-      </div>
+      {/* Video background */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        style={{
+          position: "absolute",
+          inset: 0,
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          zIndex: 1,
+        }}
+      >
+        <source src={`${import.meta.env.BASE_URL}intro-reel.mp4`} type="video/mp4" />
+      </video>
 
       {/* Overlay gradient — bottom 40% darkens so text sits clean */}
       <div
