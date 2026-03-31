@@ -1,5 +1,4 @@
 import Intro from "@/pages/Intro";
-  import LogoReel from "@/pages/LogoReel";
   import Services from "@/pages/Services";
   import "./index.css";
 
@@ -12,7 +11,6 @@ import Intro from "@/pages/Intro";
         }}
       >
         <Intro />
-        <LogoReel />
         <Services />
       </main>
     );
